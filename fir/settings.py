@@ -148,4 +148,3 @@ EMAIL_HOST_PASSWORD = 'password'
 BOOTSTRAP4 = {
  'include_jquery': True,
  }
-
