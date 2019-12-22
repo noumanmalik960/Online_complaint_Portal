@@ -1,0 +1,80 @@
+{% extends 'complaint/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>About</title>
+</head>
+
+<body>
+    {% block header %}
+    <div style="height: 100px; background: lightgrey; padding: 35px; color: black;">
+        Home/About
+    </div>
+    <div style="text-align: center; widows: 90%;">
+        <p>
+            <img src="{% static 'complaint/about1.jpg' %}" alt="about1">
+            <img src="{% static 'complaint/about2.jpg' %}" alt="about2">
+            <img src="{% static 'complaint/about3.jpg' %}" alt="about3">
+            <img src="{% static 'complaint/about4.jpg' %}" alt="about4">
+            <img src="{% static 'complaint/about5.jpg' %}" alt="about5">
+
+        </p>
+    </div>
+    {% endblock header %}
+
+    {% block content %}
+
+
+
+
+    <div>
+        <p>Islamabad Capital Police came into existence w.e.f 1st Jan 1981 by virtue of presidential order no. 17 & 18 of 1980 to fulfill the need for separate Police organization for the federal capital, Islamabad, to enforce the law, protect property, and limit civil disorder. To ensure preservation of peace and public safety through the enforcement of local, state, and Federal laws, and by providing support and assistance during emergency or crisis situations
+        </p>
+        <hr>
+        <h4 class="heading">Establishment</h4>
+        <p>Islamabad Police is regulated by Central Police Office, which involves three Divisions, Islamabad Model
+            Traffic
+            Police, Islamabad Police Information Technology Branch and centralized command & control center. Total
+            sanctioned strength of ICT Police is 12004. Commander of the ICT Police is termed as Inspector General of
+            Police, who is senior bureaucrat of Police Service of Pakistan. Current Commander of the ICT Police is
+            Muhammad
+            Aamir Zulfiqar Khan. Mr. Aamir Zulfiqar Khan is a seasoned police officer with rich experience of not only
+            field
+            service but as well as staff assignment including human resources, development and financial management, He
+            has
+            vast international exposure on various assignments. Muhammad Aamir Zulfiqar Khan is playing vital role in
+            Police
+            reforms by taking revolutionary steps in changing traditional Police Stations into e-powered Model Police
+            Stations. Divisions of the ICT Police are headed by their respective Deputy Inspectors General of Police,
+            whereas Islamabad Model Traffic Police is headed by the Senior Superintendent of Police, and the Information
+            Technology Branch by Director-Information Technology. Special Branch is another specialized entity, headed
+            by
+            the Assistant Inspector General of Police. Territory of Islamabad is covered by 22 Police Stations.
+        </p>
+        <hr>
+        <h4 class="heading">Objectives</h4>
+        <p>• Provide safe, secure and public friendly ecology to the citizens of Islamabad.
+            • Effective maintenance of law and order.
+            • Prevention and detection of crime.
+            • Efficient and smooth flow of traffic on the pattern of advanced traffic systems of the world.
+            • Protection of President and Prime Minister of Pakistan, Heads of the states and foreign dignitries
+            visiting
+            Islamabad, Foreign Diplomats residing in Islamabad and vital installations.
+            • Intelligence gathering to fulfill the objectives of police, traffic and security.
+            • Encourage public participation in the fight against crime – CPLC, public conciliatory committees, and
+            human
+            rights watch group.
+            • Help the citizens in times of distress – rescue-15.
+        </p>
+        <hr>
+        <h4 class="heading">Islamabad at Glance</h4>
+        <p>With a population of two million, it is the 10th largest city of Pakistan, while the larger
+            Islamabad-Rawalpindi
+            metropolitan area is the third largest in Pakistan with population exceeding five million.
+        </p>
+    </div>
+    {% endblock content %}
+
+</html>

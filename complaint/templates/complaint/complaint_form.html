@@ -1,0 +1,28 @@
+{% extends 'complaint/base.html' %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Complaint</title>
+</head>
+
+<body>
+
+    {% block content %}
+    <div style="width: 50%;">
+        <h3 style="text-align: center; padding-top: 10px;">File a new Complaint</h3>
+        <hr>
+        <form class="form-group" action="{% url 'complaint:complaint' %}" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button class="btn btn-primary" name="submit">Save</button>
+
+            <!-- This is an input field to redirect when user login -->
+            <input type="hidden" name="next" value="{% url 'complaint:home' %}" />
+        </form>
+    </div>
+    {% endblock content %}
+</body>
+
+</html>

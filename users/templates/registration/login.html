@@ -1,0 +1,21 @@
+{% extends 'complaint/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+
+
+<div style="width: 25%; padding: 10px;">
+    <h3 style="text-align: center; padding-top: 10px;">Admin Login</h3>
+    <hr>
+    <form action="{% url 'users:login' %}" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="btn btn-primary" name="submit">Login</button>
+
+        <!-- This is an input field to redirect when user login -->
+        <input type="hidden" name="next" value="{% url 'complaint:home' %}">
+    </form>
+</div>
+{% endblock content %}

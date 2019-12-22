@@ -1,0 +1,23 @@
+{% extends 'complaint/base.html' %}
+
+
+{% block content %}
+
+
+<div class="card" style="width: 60%; margin: auto;">
+    <div class="card-header">
+        <h4 style="text-align: center; padding-top: 10px">Update status for <small><b>{{complaint}}</b></small> filed by
+            <small><b>{{ complaint.name.capitalize }}</b></small> having Nic: <small><b>{{complaint.cnic}}</b></small>
+        </h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Complaint time: <small>{{ complaint.created}}</small</h5> <br><br>
+                <form action="{% url 'complaint:edit' complaint.id %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary" name="submit">Update</button>
+                </form>
+    </div>
+</div>
+
+{% endblock content %}

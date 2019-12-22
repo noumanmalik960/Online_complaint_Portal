@@ -1,0 +1,90 @@
+{% extends 'complaint/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% block content %}
+
+    <!-- start  -->
+
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs myclass">
+                <li class="nav-item">
+                    <a class="nav-link first" href="#">Pending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link second" href="#">Entertained</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="pending">
+                {% for complaint in pen_complaints %}
+                <ul style="text-align: left;">
+                    <h3>
+                        <li>Complaint: {{complaint}}</li>
+                    </h3> Filed by {{ complaint.name}} at <i><small>{{ complaint.created }}</small></i>
+                    <p>
+                        <a href="{% url 'complaint:edit' complaint.id %}">Update status</a>
+                    </p>
+                    <hr>
+                </ul>
+                {% endfor %}
+            </div>
+            <div class="entertained">
+                {% for complaint in ent_complaints %}
+                <ul style="text-align: left;">
+                    <h3>
+                        <li>Complaint: {{complaint}}</li>
+                    </h3> Filed by {{ complaint.name}} at <i><small>{{ complaint.created }}</small></i>
+                    <hr>
+                    <!-- <p>
+                        <a href="{% url 'complaint:edit' complaint.id %}">Update status</a>
+                    </p> -->
+                </ul>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- finish -->
+
+    <script>
+        $(document).ready(function () {
+            $('.first').addClass('active')
+            $('.entertained').hide()
+
+            $('.first').click(function () {
+                $('.first').addClass('active')
+                $('.second').removeClass('active')
+                $('.pending').show()
+                $('.entertained').hide()
+            })
+            $('.second').click(function () {
+                $('.second').addClass('active')
+                $('.first').removeClass('active')
+                $('.pending').hide()
+                $('.entertained').show()
+            })
+
+        });
+
+    </script>
+
+
+
+
+    {% endblock content %}
+
+
+
+</body>
+
+</html>
