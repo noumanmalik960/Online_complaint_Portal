@@ -43,20 +43,25 @@
 
 {% block content %}
 
-<br><br>
+<br>
 
-<ul>
-    <h2 style="color: blue;">Functionalities to be added</h2>
-    <li><h4>SMS functionality</h4></li>
-    <li><h4>Heroku deployment</h4></li>
-</ul>
 <div>
     <h1 style="text-align: center;" class="display-4">Complaint Portal</h1>
     <p>NOTE: FALSE COMPLAINT REPORTING, MEANT TO INJURE OR ANNOY ANY PERSON, IS A CRIME UNDER PAKISTAN PENAL CODE
         SECTION 182 AND PUNISHABLE BY LAW FOR UP TO 6 MONTHS OR FINE OR WITH BOTH. THE IP ADDRESS WILL BE RECORDED ALONG
         WITH OTHER INFORMATION WHICH CAN BE USED TO IDENTIFY AND TRACK A FALSE COMPLAINER. </p>
     <p>You can check the status of your previously filed complaint (if any) here or file a new complaint below</p>
-    <a class="btn btn-primary" href="{% url 'complaint:complaint' %}" role="button">Submit a Complaint</a>
+    {% if not user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'complaint:complaint' %}" role="button">Submit a Complaint</a>
+    {% endif %}
 </div>
-<br><br><br><br><br>
+<ul>
+    <h2 style="color: blue;">Functionalities to be added</h2>
+    <li>
+        <h4>SMS functionality</h4>
+    </li>
+    <li>
+        <h4>Heroku deployment</h4>
+    </li>
+</ul>
 {% endblock %}
