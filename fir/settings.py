@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'complaint',
     'users',
     'bootstrap4',
+
 ]
 
 MIDDLEWARE = [
