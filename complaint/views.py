@@ -37,6 +37,22 @@ def complaint(request):
             send_mail(subject, message, email_from, recipient_list)
 
 
+            # # sms functionality
+            # # Your Account SID from twilio.com/console
+            # account_sid = "ACa5f76db99b4487f41591f766088ac12c"
+            # # Your Auth Token from twilio.com/console
+            # auth_token = "b7b094b45326bad5bbf08856ba82e189"
+
+            # client = Client(account_sid, auth_token)
+
+            # con = form.cleaned_data['phone']
+            # contact = '+92'+ con[1:]
+            # message = client.messages.create(
+            # to=contact,
+            # from_="+18603984426",
+            # body="Your complaint has been successfully filed. It will take a week or two to entertain your case.")
+            # print(message.sid)
+
             return redirect('complaint:home')
 
     context = {'form': form}
